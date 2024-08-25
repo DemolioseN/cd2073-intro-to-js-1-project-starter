@@ -1,5 +1,5 @@
 // Create an array to hold all product objects
-var products = [];
+const products = [];
 
 // Create 3 or more product objects using object literal notation
 products.push({
@@ -7,7 +7,7 @@ products.push({
   price: 1.99,
   quantity: 0,
   productId: 1,
-  image: "starter/src/images/cherry.jpg"
+  image: "./images/cherry.jpg"
 });
 
 products.push({
@@ -15,7 +15,7 @@ products.push({
   price: 2.49,
   quantity: 0,
   productId: 2,
-  image: "starter/src/images/orange.jpg"
+  image: "./images/orange.jpg"
 });
 
 products.push({
@@ -23,11 +23,11 @@ products.push({
   price: 3.99,
   quantity: 0,
   productId: 3,
-  image: "starter/src/images/strawberry.jpg"
+  image: "./images/strawberry.jpg"
 });
 
 // Declare an empty array to hold the items in the cart
-var cart = [];
+const cart = [];
 
 // Helper function to get a product by productId
 function getProduct(productId) {
@@ -36,7 +36,7 @@ function getProduct(productId) {
 
 // Function to add a product to the cart
 function addProductToCart(productId) {
-  var product = getProduct(productId);
+  const product = getProduct(productId);
   if (product) {
     product.quantity++;
     if (!cart.includes(product)) {
@@ -47,7 +47,7 @@ function addProductToCart(productId) {
 
 // Function to increase the quantity of a product in the cart
 function increaseQuantity(productId) {
-  var product = getProduct(productId);
+  const product = getProduct(productId);
   if (product) {
     product.quantity++;
   }
@@ -55,7 +55,7 @@ function increaseQuantity(productId) {
 
 // Function to decrease the quantity of a product in the cart
 function decreaseQuantity(productId) {
-  var product = getProduct(productId);
+  const product = getProduct(productId);
   if (product) {
     product.quantity--;
     if (product.quantity === 0) {
@@ -66,7 +66,7 @@ function decreaseQuantity(productId) {
 
 // Function to remove a product from the cart
 function removeProductFromCart(productId) {
-  var product = getProduct(productId);
+  const product = getProduct(productId);
   if (product) {
     product.quantity = 0;
     cart.splice(cart.indexOf(product), 1);
@@ -87,11 +87,14 @@ function emptyCart() {
 // Function to pay for the products in the cart
 let totalPaid = 0;
 function pay(amount) {
-  totalPaid += amount;
-  if (amount < totalPaid) {
-    return totalPaid - amount;
+  const total = cartTotal();
+  if (amount < total) {
+    totalPaid += amount;
+    return total - totalPaid;
   } else {
-    return amount - totalPaid;
+    totalPaid = 0;
+    emptyCart();
+    return amount - total;
   }
 }
 
