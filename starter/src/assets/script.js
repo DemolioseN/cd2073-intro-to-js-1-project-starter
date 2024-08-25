@@ -86,17 +86,19 @@ function emptyCart() {
 
 // Function to pay for the products in the cart
 let totalPaid = 0;
+
 function pay(amount) {
   const total = cartTotal();
+  totalPaid += amount; 
   if (amount < total) {
-    totalPaid += amount;
-    return total - totalPaid;
+    return total - totalPaid; 
   } else {
-    totalPaid = 0;
+    const change = amount - total; 
     emptyCart();
-    return amount - total;
+    return change; 
   }
 }
+
 
 // Export the functions and variables for testing
 module.exports = {
