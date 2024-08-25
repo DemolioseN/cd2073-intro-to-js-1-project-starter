@@ -7,7 +7,7 @@ products.push({
   price: 1.99,
   quantity: 0,
   productId: 1,
-  image: "https://Unsplash.com/images/cherry.jpg"
+  image: "https://github.com/DemolioseN/cd2073-intro-to-js-1-project-starter/blob/abf9b2ac6e246f44ea9cc43cb94429ed8c945d74/starter/src/images/cherry.jpg"
 });
 
 products.push({
@@ -15,7 +15,7 @@ products.push({
   price: 2.49,
   quantity: 0,
   productId: 2,
-  image: "https://Unsplash.com/images/orange.jpg"
+  image: "https://github.com/DemolioseN/cd2073-intro-to-js-1-project-starter/blob/abf9b2ac6e246f44ea9cc43cb94429ed8c945d74/starter/src/images/orange.jpg"
 });
 
 products.push({
@@ -23,7 +23,7 @@ products.push({
   price: 3.99,
   quantity: 0,
   productId: 3,
-  image: "https://Unsplash.com/images/strawberry.jpg"
+  image: "https://github.com/DemolioseN/cd2073-intro-to-js-1-project-starter/blob/abf9b2ac6e246f44ea9cc43cb94429ed8c945d74/starter/src/images/strawberry.jpg"
 });
 
 // Declare an empty array to hold the items in the cart
